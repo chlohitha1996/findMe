@@ -1,17 +1,11 @@
 package com.stackroute.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.stackroute.domain.Doctor;
 import com.stackroute.domain.Patient;
 import com.stackroute.repository.PatientRepository;
-import org.neo4j.ogm.annotation.Relationship;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
-import java.util.Optional;
 
 @Service
 public class PatientServiceImpl implements PatientService {
