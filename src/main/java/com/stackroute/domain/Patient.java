@@ -10,7 +10,7 @@ import java.util.Date;
 public class Patient {
 
     private  String patientName;
-    private  Date patientDOB;
+
     private  String gender;
     @Id
     private  String patientEmail;
@@ -26,13 +26,6 @@ public class Patient {
         this.patientName = patientName;
     }
 
-    public Date getPatientDOB() {
-        return patientDOB;
-    }
-
-    public void setPatientDOB(Date patientDOB) {
-        this.patientDOB = patientDOB;
-    }
 
     public String getGender() {
         return gender;
@@ -75,9 +68,9 @@ public class Patient {
     }
 
 
-    public Patient(String patientName, Date patientDOB, String gender, String patientEmail, Long patientPhone, String patientCity, String patientArea) {
+    public Patient(String patientName, String gender, String patientEmail, Long patientPhone, String patientCity, String patientArea) {
         this.patientName = patientName;
-        this.patientDOB = patientDOB;
+
         this.gender = gender;
         this.patientEmail = patientEmail;
         this.patientPhone = patientPhone;
@@ -90,8 +83,8 @@ public class Patient {
     public String toString() {
         return "Patient{" +
                 "patientName='" + patientName + '\'' +
-                ", patientDOB=" + patientDOB +
-                ", gender='" + gender + '\'' +
+
+                ", gender='" + gender +
                 ", patientEmail='" + patientEmail + '\'' +
                 ", patientPhone=" + patientPhone +
                 ", patientCity='" + patientCity + '\'' +

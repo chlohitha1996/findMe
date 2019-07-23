@@ -8,7 +8,7 @@ import java.util.Date;
 
 public interface DoctorService {
 
-     Collection<Doctor> getAll();
+  public Collection<Doctor> getAll();
 
 
 
@@ -18,12 +18,12 @@ public interface DoctorService {
                               Long phone,
                               String clinicName,
                               String Specialization,
-                              Date practiceStartDate,
+
                               String clinicState,
                               String clinicCity,
                               String clinicFlatNo,
-                              String clinicArea,
-                              int clinicPinCode);
+                              String clinicArea
+                            );
 
     public Doctor updateDoctor(Doctor doctor,String doctorMail);
 

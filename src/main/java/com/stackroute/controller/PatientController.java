@@ -13,8 +13,10 @@ public class PatientController {
     @Autowired
     PatientService  patientService;
 
+
+
     @GetMapping("patients")
-    public Collection<Patient> getAll()
+    public Collection<Patient>getAll()
     {
 
         return patientService.getAll();

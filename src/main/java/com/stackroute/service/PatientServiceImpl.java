@@ -19,6 +19,12 @@ public class PatientServiceImpl implements PatientService {
         this.patientRepository =patientRepository;
     }
 
+
+    @Override
+    public Collection<Patient> getAll(){
+        return patientRepository.getAllPatients();
+    }
+
     @Override
 
     public Patient savePatient(Patient patient)
@@ -26,7 +32,7 @@ public class PatientServiceImpl implements PatientService {
     {
         Patient  savedpatient=null;
 
-        savedpatient=patientRepository.createNode(patient.getPatientName(),patient.getPatientDOB(),
+        savedpatient=patientRepository.createNode(patient.getPatientName(),
 
                                                    patient.getGender(),patient.getPatientEmail(),
                                                     patient.getPatientPhone(),patient.getPatientCity(),
@@ -35,14 +41,6 @@ public class PatientServiceImpl implements PatientService {
         System.out.println(savedpatient);
 
         return  savedpatient;
-
-    }
-
-    @Override
-    public Collection<Patient>getAll()
-    {
-
-        return patientRepository.getAllPatients();
 
     }
 
@@ -57,7 +55,7 @@ public class PatientServiceImpl implements PatientService {
     public Patient updatePatient(Patient patient,String patientEmail)
     {
 
-        return patientRepository.updateNode(patient.getPatientName(),patient.getPatientDOB(),
+        return patientRepository.updateNode(patient.getPatientName(),
 
                 patient.getGender(),patient.getPatientEmail(),
                 patient.getPatientPhone(),patient.getPatientCity(),

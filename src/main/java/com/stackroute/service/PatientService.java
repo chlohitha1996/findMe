@@ -10,6 +10,7 @@ import java.util.Date;
 public interface PatientService {
    public Patient savePatient(Patient patient);
 
+
     public Collection<Patient> getAll();
 
     public void deletePatient(String patientEmail);

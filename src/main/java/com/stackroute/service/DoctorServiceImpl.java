@@ -33,17 +33,17 @@ public class DoctorServiceImpl implements DoctorService {
                              Long phone,
                              String clinicName,
                              String Specialization,
-                             Date practiceStartDate,
+
                              String clinicState,
                              String clinicCity,
                              String clinicFlatNo,
-                             String clinicArea,
-                             int clinicPinCode) {
+                             String clinicArea
+                            ) {
 
 
         Doctor savedDoctor = null;
-        savedDoctor = doctorRepository.createNode(doctorMail, doctorName, doctorGender, phone, clinicName, Specialization, practiceStartDate, clinicState,
-                clinicCity, clinicFlatNo, clinicArea, clinicPinCode);
+        savedDoctor = doctorRepository.createNode(doctorMail, doctorName, doctorGender, phone, clinicName, Specialization,clinicState,
+                clinicCity, clinicFlatNo, clinicArea);
         System.out.println(savedDoctor);
         return savedDoctor;
 
@@ -52,9 +52,9 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public Doctor updateDoctor(Doctor doctor, String doctorMail) {
         return doctorRepository.updateNode(doctorMail, doctor.getDoctorName(), doctor.getDoctorGender(), doctor.getPhone(),
-                doctor.getClinicName(), doctor.getSpecialization(), doctor.getPracticeStartDate(),
-                doctor.getClinicState(), doctor.getClinicCity(), doctor.getClinicFlatNo(), doctor.getClinicArea(),
-                doctor.getClinicPinCode());
+                doctor.getClinicName(), doctor.getSpecialization(),
+                doctor.getClinicState(), doctor.getClinicCity(), doctor.getClinicFlatNo(), doctor.getClinicArea()
+              );
 
 
     }

@@ -13,6 +13,7 @@ public class DoctorController {
 
     @Autowired
     DoctorServiceImpl doctorService;
+    private Doctor doctor;
 
     @GetMapping("doctors")
     public Collection<Doctor> getAll(){
@@ -23,15 +24,16 @@ public class DoctorController {
     @PostMapping("doctorsave")
     public Doctor saveDoctor(@RequestBody Doctor doctor) {
 
-        return  doctorService.saveDoctor(doctor.getDoctorMail(),doctor.getDoctorName(), doctor.getDoctorGender(), doctor.getPhone(),
-                doctor.getClinicName(), doctor.getSpecialization(), doctor.getPracticeStartDate(),
-                doctor.getClinicState(), doctor.getClinicCity(), doctor.getClinicFlatNo(), doctor.getClinicArea(),
-                doctor.getClinicPinCode());
+        return  doctorService.saveDoctor(doctor.getDoctorMail(),doctor.getDoctorName(),doctor.getDoctorGender(),doctor.getPhone(),
+                doctor.getClinicName(),doctor.getSpecialization(),doctor.getClinicState(),doctor.getClinicCity(),
+
+                doctor.getClinicFlatNo(),doctor.getClinicArea());
+
     }
 
-    @PutMapping("doctorupdate/{id}")
+    @PutMapping("doctorupdate/{doctorMail}")
     public Doctor updateDoctor(@RequestBody Doctor doctor,@PathVariable String doctorMail){
-
+        this.doctor = doctor;
         return doctorService.updateDoctor(doctor,doctorMail);
     }
 
@@ -40,7 +42,7 @@ public class DoctorController {
         return  doctorService.getByName(name);
     }
 
-    @DeleteMapping("doctordelete/{id}")
+    @DeleteMapping("doctordelete/{doctorMail}")
     public String deleteDoctor1(@PathVariable String doctorMail) {
         doctorService.deleteDoctor(doctorMail);
         return "Deleted Doctor";
